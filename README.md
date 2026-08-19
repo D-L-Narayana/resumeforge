@@ -1,0 +1,22 @@
+# ResumeForge
+
+Premium resume builder with a real-time ATS score engine. Pure HTML/CSS/JS — zero runtime dependencies, fully client-side and private.
+
+## Features
+- Live resume builder with instant preview across 4 recruiter-approved templates (Modern, Classic, Minimal, Executive)
+- 8-point ATS check engine with actionable fix hints (client-side, nothing leaves the browser)
+- One-click PDF export via print-optimized styling
+- Monetization-ready landing page: Free / Pro $9mo / Lifetime $49 tiers
+
+## Run locally
+```
+python3 -m http.server 8080
+```
+Then open http://localhost:8080
+
+## Structure
+- `index.html` — marketing landing page
+- `builder.html` — live builder + ATS scoring
+- `js/data.js` — templates, pricing, sample resume data
+- `js/ats.js` — pure scoring engine (node-testable)
+- `tests/logic.test.js` — offline logic tests (`node tests/logic.test.js`)

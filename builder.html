@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resume Builder — ResumeForge</title>
+<meta name="description" content="Live resume builder with real-time ATS scoring and one-click PDF export.">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/builder.css">
+</head>
+<body class="builder">
+<div class="topbar">
+<a class="logo" href="index.html">Resume<span>Forge</span></a>
+<div class="top-actions">
+<select id="templateSelect" aria-label="Template"></select>
+<div id="scoreChip" class="score-chip">ATS —</div>
+<button class="btn btn-primary" id="printBtn">Download PDF</button>
+</div>
+</div>
+<main class="builder-main">
+<aside class="panel">
+<h2 class="ptitle">Your details</h2>
+<div class="row2">
+<div class="fgroup"><label>Full name</label><input id="fName"></div>
+<div class="fgroup"><label>Job title</label><input id="fTitle"></div>
+</div>
+<div class="row2">
+<div class="fgroup"><label>Email</label><input id="fEmail" type="email"></div>
+<div class="fgroup"><label>Phone</label><input id="fPhone"></div>
+</div>
+<div class="fgroup"><label>Location</label><input id="fLocation"></div>
+<div class="fgroup"><label>Professional summary</label><textarea id="fSummary"></textarea></div>
+<div class="fgroup"><label>Skills (comma separated)</label><input id="fSkills"></div>
+<h2 class="ptitle">Experience</h2>
+<div id="expList"></div>
+<button id="addExp" class="addbtn">+ Add experience</button>
+<h2 class="ptitle">Education</h2>
+<div id="eduList"></div>
+<button id="addEdu" class="addbtn">+ Add education</button>
+<h2 class="ptitle">ATS checks</h2>
+<div id="scoreChecks" class="checks"></div>
+</aside>
+<section class="stage">
+<div id="paper" class="paper t-modern"></div>
+</section>
+</main>
+<script src="js/data.js"></script>
+<script src="js/ats.js"></script>
+<script src="js/builder.js"></script>
+</body>
+</html>
