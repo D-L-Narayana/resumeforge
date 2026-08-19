@@ -1,0 +1,9 @@
+.page-head{padding:150px 0 10px;text-align:center}
+.page-head .section-sub{margin-bottom:20px}
+.ex-card{display:flex;flex-direction:column;gap:12px}
+.ex-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.ex-head h3{margin:0}
+.ex-score{background:rgba(52,211,153,.14);color:#34d399;padding:4px 12px;border-radius:999px;font-weight:700;font-size:.78rem;white-space:nowrap}
+.ex-meta{display:flex;flex-wrap:wrap;gap:6px}
+.kw{padding:3px 10px;border-radius:999px;font-size:.76rem;border:1px solid var(--border);color:var(--muted)}
+.ex-card .btn{margin-top:auto}
