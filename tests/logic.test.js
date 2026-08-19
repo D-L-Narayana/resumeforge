@@ -38,4 +38,10 @@ assert(e.label&&e.blurb&&e.resume,'example '+id+' must have label, blurb, resume
 const s=score(e.resume);
 assert(s.total>=90,'example '+id+' must score 90+, got '+s.total);
 });
+const Q=require('../js/questions.js');
+assert.strictEqual(Object.keys(Q).length,6,'must ship 6 question tracks');
+Object.keys(Q).forEach(function(r){
+assert(Q[r].length>=8,'track '+r+' must have 8+ questions');
+Q[r].forEach(function(it){assert(it.q&&it.tip,'every question in '+r+' needs q and tip');});
+});
 console.log('ALL TESTS PASSED');
