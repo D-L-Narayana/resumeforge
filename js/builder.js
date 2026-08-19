@@ -47,6 +47,7 @@ const p=$('paper');
 p.innerHTML=`<h1>${esc(S.name)}</h1><div class="p-title">${esc(S.title)}</div><div class="p-contact">${[S.email,S.phone,S.location].filter(Boolean).map(esc).join(' \u00B7 ')}</div>${S.summary?`<div class="p-sec"><h2>Summary</h2><p>${esc(S.summary)}</p></div>`:''}${S.skills&&S.skills.length?`<div class="p-sec"><h2>Skills</h2><div class="p-skills">${S.skills.map(function(s){return `<span class="p-skill">${esc(s)}</span>`;}).join('')}</div></div>`:''}${S.experience.length?`<div class="p-sec"><h2>Experience</h2>${S.experience.map(function(e){return `<div class="p-role"><div class="rhead"><span>${esc(e.role)}</span><span class="rmeta">${esc(e.period)}</span></div><div class="rmeta">${esc(e.company)}</div><ul>${(e.bullets||[]).map(function(b){return `<li>${esc(b)}</li>`;}).join('')}</ul></div>`;}).join('')}</div>`:''}${S.education.length?`<div class="p-sec"><h2>Education</h2>${S.education.map(function(e){return `<div class="p-role"><div class="rhead"><span>${esc(e.degree)}</span><span class="rmeta">${esc(e.year)}</span></div><div class="rmeta">${esc(e.school)}</div></div>`;}).join('')}</div>`:''}`;
 updateScore();
 if(document.getElementById('fJD'))renderMatch();
+if(document.getElementById('doctorBox'))renderDoctor();
 }
 function updateScore(){
 const r=window.RF_ATS.score(S);
@@ -71,5 +72,17 @@ const m=window.RF_MATCH.match(v,S);
 box.innerHTML=`<div class="match-pct ${m.pct>=70?'good':(m.pct>=40?'mid':'low')}">${m.pct}% keyword match</div><div class="kw-wrap">${m.matched.map(function(k){return `<span class="kw kw-ok">\u2713 ${k}</span>`;}).join('')}${m.missing.map(function(k){return `<span class="kw kw-miss">${k}</span>`;}).join('')}</div>`;
 }
 $('fJD').addEventListener('input',renderMatch);
+function renderDoctor(){
+const box=$('doctorBox');
+const items=[];
+S.experience.forEach(function(e){(e.bullets||[]).forEach(function(b){
+const a=window.RF_BULLET.analyze(b);
+if(a.score<100)items.push({b:b,a:a});
+});});
+if(!items.length){box.innerHTML='<div class="check ok">\u2713 All bullets look strong.</div>';return;}
+box.innerHTML=items.slice(0,6).map(function(it){
+return `<div class="doc-item"><div class="doc-b">\u201C${esc(it.b.length>70?it.b.slice(0,70)+'\u2026':it.b)}\u201D</div>${it.a.checks.filter(function(c){return !c.ok;}).map(function(c){return `<div class="check">\u25CB ${c.label} \u2014 ${c.tip}</div>`;}).join('')}</div>`;
+}).join('');
+}
 bindStatic();expEditor();eduEditor();render();
 })();

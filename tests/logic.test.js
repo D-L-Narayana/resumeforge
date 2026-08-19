@@ -44,4 +44,13 @@ Object.keys(Q).forEach(function(r){
 assert(Q[r].length>=8,'track '+r+' must have 8+ questions');
 Q[r].forEach(function(it){assert(it.q&&it.tip,'every question in '+r+' needs q and tip');});
 });
+const BL=require('../js/bulletlib.js');
+const goodB=BL.analyze('Led redesign of the checkout flow, increasing conversion 32% across 1.2M users');
+assert.strictEqual(goodB.score,100,'strong bullet should score 100, got '+goodB.score);
+const badB=BL.analyze('responsible for stuff');
+assert(badB.score<=25,'weak bullet should score low, got '+badB.score);
+assert.strictEqual(goodB.checks.length,4,'bullet doctor runs 4 checks');
+D.sample.experience.forEach(function(e){e.bullets.forEach(function(b){
+assert.strictEqual(BL.analyze(b).score,100,'sample bullet should pass doctor: '+b);
+});});
 console.log('ALL TESTS PASSED');

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Application Tracker — ResumeForge</title>
+<meta name="description" content="Track every job application through your pipeline — private, in-browser, with JSON export and import.">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/examples.css">
+<link rel="stylesheet" href="css/tracker.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+<nav class="nav">
+<div class="container nav-inner">
+<a class="logo" href="index.html"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366f1"/><stop offset=".55" stop-color="#a855f7"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg1)"/><path d="M11 23V9h7.2a4.3 4.3 0 0 1 1.4 8.4L23 23h-3.6l-3-5H14v5z" fill="#fff"/></svg>Resume<span>Forge</span></a>
+<div class="nav-links">
+<a href="examples.html">Examples</a>
+<a href="interview.html">Interview prep</a>
+<a href="coverletter.html">Cover letters</a>
+<a href="index.html#pricing">Pricing</a>
+</div>
+<a class="btn btn-primary" href="builder.html">Open Builder</a>
+</div>
+</nav>
+<header class="page-head">
+<div class="container">
+<span class="badge">Application tracker</span>
+<h2 class="section-title">Your pipeline, at a glance</h2>
+<p class="section-sub">Track every application from saved to offer. Nothing leaves your browser — export JSON to save, import it to pick up where you left off.</p>
+<div id="pipeRow" class="pipes"></div>
+</div>
+</header>
+<section class="section" style="padding-top:0">
+<div class="container">
+<div class="tr-toolbar">
+<button id="addBtn" class="btn btn-primary">+ Add application</button>
+<button id="exportBtn" class="btn btn-ghost">Export JSON</button>
+<label class="btn btn-ghost" for="importFile">Import JSON</label>
+<input type="file" id="importFile" accept="application/json">
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Company</th><th>Role</th><th>Status</th><th>Date</th><th>Notes</th><th></th></tr></thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="cta-band">
+<div class="container">
+<h2>More interviews start with <span class="grad">a stronger resume</span></h2>
+<a class="btn btn-primary btn-lg" href="builder.html">Open the builder</a>
+</div>
+</section>
+<footer>
+<div class="container foot-inner">
+<div>© <span id="year"></span> ResumeForge. Crafted for job seekers.</div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="builder.html">Builder</a>
+<a href="examples.html">Examples</a>
+<a href="interview.html">Interview prep</a>
+</div>
+</div>
+</footer>
+<script src="js/tracker.js"></script>
+</body>
+</html>
