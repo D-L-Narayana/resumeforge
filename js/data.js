@@ -18,7 +18,7 @@ templates:[
 ],
 pricing:[
 {name:'Free',price:'$0',per:'',popular:false,cta:'Start free',features:['1 pro template','Full ATS score engine','PDF export','No signup required']},
-{name:'Pro',price:'$9',per:'/mo',popular:true,cta:'Go Pro',features:['All 6 templates','Unlimited resumes','Cover letter studio','AI bullet rewriting (soon)','Priority support']},
+{name:'Pro',price:'$9',per:'/mo',popular:true,cta:'Go Pro',features:['All 6 templates','Unlimited resumes','Cover letter studio','Bullet doctor hints','Priority support']},
 {name:'Lifetime',price:'$49',per:' once',popular:false,cta:'Buy once',features:['Everything in Pro','Lifetime updates','Early access to new templates','Commercial use']}
 ],
 testimonials:[

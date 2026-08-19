@@ -1,0 +1,15 @@
+.pipes{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:6px 0 34px}
+.pipe{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 24px;text-align:center;min-width:96px}
+.pipe strong{display:block;font-size:1.3rem;letter-spacing:-.02em}
+.pipe span{color:var(--muted);font-size:.78rem}
+.tr-toolbar{display:flex;gap:10px;justify-content:flex-end;margin-bottom:14px;flex-wrap:wrap}
+.table-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:12px}
+table{width:100%;border-collapse:collapse;min-width:720px}
+th{text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:8px 10px}
+td{padding:5px 5px;border-top:1px solid var(--border)}
+td input,td select{background:rgba(255,255,255,.03);border:1px solid transparent;border-radius:8px;padding:8px 10px;color:var(--text);font-family:inherit;font-size:.88rem;width:100%}
+td input:focus,td select:focus{outline:none;border-color:var(--acc1);background:rgba(255,255,255,.06)}
+td select option{background:#12121f;color:var(--text)}
+.rm{background:none;border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:4px 9px;cursor:pointer}
+.rm:hover{color:#f87171;border-color:#f87171}
+#importFile{display:none}
