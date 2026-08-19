@@ -1,0 +1,18 @@
+const assert=require('assert');
+global.window={};
+const {score}=require('../js/ats.js');
+require('../js/data.js');
+const D=window.RF_DATA;
+assert(D&&D.sample,'RF_DATA.sample must exist');
+const good=score(D.sample);
+assert(good.total>=90&&good.total<=100,'good sample should score high, got '+good.total);
+assert.strictEqual(good.checks.length,8,'engine must run 8 checks');
+assert.strictEqual(good.checks.reduce(function(s,c){return s+c.max;},0),100,'weights must sum to 100');
+const bad=score({});
+assert.strictEqual(bad.total,0,'empty resume must score 0');
+const mid=score({email:'a@b.co',phone:'1234567',skills:['a','b','c','d','e','f']});
+assert.strictEqual(mid.total,25,'partial resume expected 25, got '+mid.total);
+assert.strictEqual(D.templates.length,4,'must ship 4 templates');
+assert(D.pricing.some(function(p){return p.popular;}),'one plan must be popular');
+assert(D.features.length===6&&D.faq.length===5&&D.testimonials.length===4,'landing data complete');
+console.log('ALL TESTS PASSED');
