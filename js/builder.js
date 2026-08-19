@@ -1,6 +1,12 @@
 (function(){
 const S=JSON.parse(JSON.stringify(window.RF_DATA.sample));
 let tpl='modern';
+const _q=new URLSearchParams(location.search);
+const _ex=_q.get('example');
+if(_ex&&window.RF_EXAMPLES&&window.RF_EXAMPLES[_ex]){
+const _r=JSON.parse(JSON.stringify(window.RF_EXAMPLES[_ex].resume));
+Object.keys(_r).forEach(function(k){S[k]=_r[k];});
+}
 const $=function(id){return document.getElementById(id);};
 const esc=function(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');};
 function bindStatic(){
@@ -52,6 +58,8 @@ $('scoreChecks').innerHTML=r.checks.map(function(c){return `<div class="check ${
 const sel=$('templateSelect');
 sel.innerHTML=window.RF_DATA.templates.map(function(t){return `<option value="${t.id}">${t.name}</option>`;}).join('');
 sel.addEventListener('change',function(){tpl=sel.value;$('paper').className='paper t-'+tpl;render();});
+const _tq=_q.get('template');
+if(_tq&&window.RF_DATA.templates.some(function(t){return t.id===_tq;})){tpl=_tq;sel.value=_tq;$('paper').className='paper t-'+_tq;}
 $('addExp').addEventListener('click',function(){S.experience.push({role:'',company:'',period:'',bullets:[]});expEditor();render();});
 $('addEdu').addEventListener('click',function(){S.education.push({degree:'',school:'',year:''});eduEditor();render();});
 $('printBtn').addEventListener('click',function(){window.print();});

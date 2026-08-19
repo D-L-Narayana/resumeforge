@@ -30,4 +30,12 @@ assert(m.matched.indexOf('figma')!==-1,'figma should match the sample resume');
 assert(m.pct>=30,'sample should cover a good chunk of the JD, got '+m.pct);
 assert.strictEqual(jdm.match(jd,{}).pct,0,'empty resume matches nothing');
 assert.strictEqual(jdm.match('',D.sample).pct,0,'empty JD yields 0');
+const EX=require('../js/examples.js');
+assert.strictEqual(Object.keys(EX).length,5,'must ship 5 examples');
+Object.keys(EX).forEach(function(id){
+const e=EX[id];
+assert(e.label&&e.blurb&&e.resume,'example '+id+' must have label, blurb, resume');
+const s=score(e.resume);
+assert(s.total>=90,'example '+id+' must score 90+, got '+s.total);
+});
 console.log('ALL TESTS PASSED');
