@@ -12,7 +12,14 @@ const bad=score({});
 assert.strictEqual(bad.total,0,'empty resume must score 0');
 const mid=score({email:'a@b.co',phone:'1234567',skills:['a','b','c','d','e','f']});
 assert.strictEqual(mid.total,25,'partial resume expected 25, got '+mid.total);
-assert.strictEqual(D.templates.length,4,'must ship 4 templates');
+assert.strictEqual(D.templates.length,6,'must ship 6 templates');
 assert(D.pricing.some(function(p){return p.popular;}),'one plan must be popular');
 assert(D.features.length===6&&D.faq.length===5&&D.testimonials.length===4,'landing data complete');
+const cover=require('../js/coverlib.js');
+['confident','friendly','formal'].forEach(function(t){
+const g=cover.generate(t,{company:'Acme',role:'PM',name:'Sam'});
+assert(g.hook&&g.body&&g.close,'cover parts must exist for '+t);
+assert(g.hook.indexOf('Acme')!==-1||g.body.indexOf('Acme')!==-1,'company must be mentioned for '+t);
+});
+assert(cover.generate('unknown',{}).hook.length>0,'unknown tone falls back to confident');
 console.log('ALL TESTS PASSED');

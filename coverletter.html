@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cover Letter Studio — ResumeForge</title>
+<meta name="description" content="Generate a tailored cover letter in three tones with live preview and one-click PDF export.">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/builder.css">
+<link rel="stylesheet" href="css/cover.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body class="builder">
+<div class="topbar">
+<a class="logo" href="index.html"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366f1"/><stop offset=".55" stop-color="#a855f7"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg1)"/><path d="M11 23V9h7.2a4.3 4.3 0 0 1 1.4 8.4L23 23h-3.6l-3-5H14v5z" fill="#fff"/></svg>Resume<span>Forge</span></a>
+<div class="top-actions">
+<a class="btn btn-ghost" href="builder.html">Resume builder</a>
+<select id="toneSelect" aria-label="Tone">
+<option value="confident">Confident</option>
+<option value="friendly">Friendly</option>
+<option value="formal">Formal</option>
+</select>
+<div id="wordChip" class="score-chip">—</div>
+<button class="btn btn-ghost" id="regenBtn">Regenerate draft</button>
+<button class="btn btn-primary" id="printBtn">Download PDF</button>
+</div>
+</div>
+<main class="builder-main">
+<aside class="panel">
+<h2 class="ptitle">Letter details</h2>
+<div class="row2">
+<div class="fgroup"><label>Full name</label><input id="fcName"></div>
+<div class="fgroup"><label>Email</label><input id="fcEmail" type="email"></div>
+</div>
+<div class="row2">
+<div class="fgroup"><label>Phone</label><input id="fcPhone"></div>
+<div class="fgroup"><label>Hiring manager</label><input id="fcManager"></div>
+</div>
+<div class="row2">
+<div class="fgroup"><label>Company</label><input id="fcCompany"></div>
+<div class="fgroup"><label>Role</label><input id="fcRole"></div>
+</div>
+<h2 class="ptitle">Paragraphs</h2>
+<div class="fgroup"><label>Opening paragraph</label><textarea id="fHook"></textarea></div>
+<div class="fgroup"><label>Body paragraph</label><textarea id="fBody"></textarea></div>
+<div class="fgroup"><label>Closing paragraph</label><textarea id="fClose"></textarea></div>
+</aside>
+<section class="stage">
+<div id="paper" class="paper t-modern letter"></div>
+</section>
+</main>
+<script src="js/coverlib.js"></script>
+<script src="js/cover.js"></script>
+</body>
+</html>
