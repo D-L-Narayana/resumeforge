@@ -40,6 +40,7 @@ function render(){
 const p=$('paper');
 p.innerHTML=`<h1>${esc(S.name)}</h1><div class="p-title">${esc(S.title)}</div><div class="p-contact">${[S.email,S.phone,S.location].filter(Boolean).map(esc).join(' \u00B7 ')}</div>${S.summary?`<div class="p-sec"><h2>Summary</h2><p>${esc(S.summary)}</p></div>`:''}${S.skills&&S.skills.length?`<div class="p-sec"><h2>Skills</h2><div class="p-skills">${S.skills.map(function(s){return `<span class="p-skill">${esc(s)}</span>`;}).join('')}</div></div>`:''}${S.experience.length?`<div class="p-sec"><h2>Experience</h2>${S.experience.map(function(e){return `<div class="p-role"><div class="rhead"><span>${esc(e.role)}</span><span class="rmeta">${esc(e.period)}</span></div><div class="rmeta">${esc(e.company)}</div><ul>${(e.bullets||[]).map(function(b){return `<li>${esc(b)}</li>`;}).join('')}</ul></div>`;}).join('')}</div>`:''}${S.education.length?`<div class="p-sec"><h2>Education</h2>${S.education.map(function(e){return `<div class="p-role"><div class="rhead"><span>${esc(e.degree)}</span><span class="rmeta">${esc(e.year)}</span></div><div class="rmeta">${esc(e.school)}</div></div>`;}).join('')}</div>`:''}`;
 updateScore();
+if(document.getElementById('fJD'))renderMatch();
 }
 function updateScore(){
 const r=window.RF_ATS.score(S);
@@ -54,5 +55,13 @@ sel.addEventListener('change',function(){tpl=sel.value;$('paper').className='pap
 $('addExp').addEventListener('click',function(){S.experience.push({role:'',company:'',period:'',bullets:[]});expEditor();render();});
 $('addEdu').addEventListener('click',function(){S.education.push({degree:'',school:'',year:''});eduEditor();render();});
 $('printBtn').addEventListener('click',function(){window.print();});
+function renderMatch(){
+const box=$('matchResult');
+const v=$('fJD').value.trim();
+if(!v){box.innerHTML='<div class="check">Paste a job description to see keyword coverage.</div>';return;}
+const m=window.RF_MATCH.match(v,S);
+box.innerHTML=`<div class="match-pct ${m.pct>=70?'good':(m.pct>=40?'mid':'low')}">${m.pct}% keyword match</div><div class="kw-wrap">${m.matched.map(function(k){return `<span class="kw kw-ok">\u2713 ${k}</span>`;}).join('')}${m.missing.map(function(k){return `<span class="kw kw-miss">${k}</span>`;}).join('')}</div>`;
+}
+$('fJD').addEventListener('input',renderMatch);
 bindStatic();expEditor();eduEditor();render();
 })();

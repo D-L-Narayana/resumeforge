@@ -11,7 +11,7 @@
 </head>
 <body class="builder">
 <div class="topbar">
-<a class="logo" href="index.html"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366f1"/><stop offset=".55" stop-color="#a855f7"/><stop offset="1" stop-color="#22d3ee"/></defs></linearGradient><rect width="32" height="32" rx="9" fill="url(#lg1)"/><path d="M11 23V9h7.2a4.3 4.3 0 0 1 1.4 8.4L23 23h-3.6l-3-5H14v5z" fill="#fff"/></svg>Resume<span>Forge</span></a>
+<a class="logo" href="index.html"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366f1"/><stop offset=".55" stop-color="#a855f7"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg1)"/><path d="M11 23V9h7.2a4.3 4.3 0 0 1 1.4 8.4L23 23h-3.6l-3-5H14v5z" fill="#fff"/></svg>Resume<span>Forge</span></a>
 <div class="top-actions">
 <a class="btn btn-ghost" href="coverletter.html">Cover letter</a>
 <select id="templateSelect" aria-label="Template"></select>
@@ -41,6 +41,9 @@
 <button id="addEdu" class="addbtn">+ Add education</button>
 <h2 class="ptitle">ATS checks</h2>
 <div id="scoreChecks" class="checks"></div>
+<h2 class="ptitle">Job match</h2>
+<div class="fgroup"><label>Paste job description</label><textarea id="fJD" placeholder="Paste the job post here to see keyword coverage..."></textarea></div>
+<div id="matchResult" class="checks"><div class="check">Paste a job description to see keyword coverage.</div></div>
 </aside>
 <section class="stage">
 <div id="paper" class="paper t-modern"></div>
@@ -48,6 +51,7 @@
 </main>
 <script src="js/data.js"></script>
 <script src="js/ats.js"></script>
+<script src="js/match.js"></script>
 <script src="js/builder.js"></script>
 </body>
 </html>
