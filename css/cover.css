@@ -1,0 +1,6 @@
+.letter{min-height:900px}
+.letter h1{font-size:22px}
+.l-date{font-size:11.5px;color:#666;margin-bottom:16px}
+.l-body{margin-top:22px}
+.l-body p{margin:12px 0;font-size:13px;color:#333;line-height:1.75}
+#toneSelect{width:auto;padding:8px 12px}

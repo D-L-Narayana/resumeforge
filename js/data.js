@@ -12,11 +12,13 @@ templates:[
 {id:'modern',name:'Modern',accent:'#6366f1',desc:'Bold accent headers with a clean skills grid. Great for tech and product roles.'},
 {id:'classic',name:'Classic',accent:'#111827',desc:'Timeless serif look trusted in finance, law, and consulting.'},
 {id:'minimal',name:'Minimal',accent:'#94a3b8',desc:'Quiet, airy, typography-first. Perfect for design and research.'},
-{id:'executive',name:'Executive',accent:'#0f766e',desc:'Authoritative teal accents for senior and leadership roles.'}
+{id:'executive',name:'Executive',accent:'#0f766e',desc:'Authoritative teal accents for senior and leadership roles.'},
+{id:'compact',name:'Compact',accent:'#b45309',desc:'Dense single-page layout that fits 10+ years of experience without clutter.'},
+{id:'slate',name:'Slate',accent:'#334155',desc:'Understated slate tones with strong hierarchy. Built for engineering roles.'}
 ],
 pricing:[
 {name:'Free',price:'$0',per:'',popular:false,cta:'Start free',features:['1 pro template','Full ATS score engine','PDF export','No signup required']},
-{name:'Pro',price:'$9',per:'/mo',popular:true,cta:'Go Pro',features:['All 4 templates','Unlimited resumes','Cover letter mode (soon)','AI bullet rewriting (soon)','Priority support']},
+{name:'Pro',price:'$9',per:'/mo',popular:true,cta:'Go Pro',features:['All 4 templates','Unlimited resumes','Cover letter studio','AI bullet rewriting (soon)','Priority support']},
 {name:'Lifetime',price:'$49',per:' once',popular:false,cta:'Buy once',features:['Everything in Pro','Lifetime updates','Early access to new templates','Commercial use']}
 ],
 testimonials:[
