@@ -7,6 +7,8 @@ Premium resume builder with a real-time ATS score engine. Pure HTML/CSS/JS — z
 - 8-point ATS check engine with actionable fix hints (client-side, nothing leaves the browser)
 - Cover letter studio with three tone presets and live preview
 - Job description keyword matcher with live coverage percentage
+- Examples library: 5 complete role resumes, all scoring 90+ ATS
+- Interview prep studio: 48 curated questions across 6 role tracks
 - One-click PDF export via print-optimized styling
 - Monetization-ready landing page: Free / Pro $9mo / Lifetime $49 tiers
 
