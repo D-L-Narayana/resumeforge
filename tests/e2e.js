@@ -1,0 +1,34 @@
+const {chromium}=require('playwright');
+(async function(){
+const b=await chromium.launch();
+const p=await b.newPage();
+const base='http://localhost:8043';
+const results=[];
+function ok(name,cond){results.push((cond?'PASS':'FAIL')+' '+name);if(!cond)process.exitCode=1;}
+await p.goto(base+'/index.html');await p.waitForTimeout(500);
+ok('landing: 6 template cards',await p.locator('#templateGrid .template').count()===6);
+ok('landing: 3 pricing cards',await p.locator('#pricingGrid .price-card').count()===3);
+ok('landing: 5 faq items',await p.locator('#faqList .faq-item').count()===5);
+await p.goto(base+'/builder.html');await p.waitForTimeout(400);
+ok('builder: ATS 100 chip',(await p.locator('#scoreChip').innerText()).indexOf('100')!==-1);
+await p.fill('#fJD','Figma prototyping design systems user research');
+await p.waitForTimeout(200);
+ok('builder: JD match renders',(await p.locator('#matchResult').innerText()).indexOf('% keyword match')!==-1);
+await p.selectOption('#templateSelect','classic');
+ok('builder: template switch',await p.locator('#paper.t-classic').count()===1);
+await p.goto(base+'/builder.html?example=swe');await p.waitForTimeout(400);
+ok('builder: example deep link',(await p.locator('#paper h1').innerText()).indexOf('Jordan Lee')!==-1);
+await p.goto(base+'/coverletter.html');await p.waitForTimeout(400);
+ok('cover: word count chip',(await p.locator('#wordChip').innerText()).indexOf('words')!==-1);
+await p.goto(base+'/examples.html');await p.waitForTimeout(400);
+ok('examples: 5 cards',await p.locator('#exGrid .ex-card').count()===5);
+await p.goto(base+'/interview.html');await p.waitForTimeout(400);
+ok('interview: 8 question cards',await p.locator('#qList .q-card').count()===8);
+await p.locator('#qList .q-card').first().click();
+ok('interview: progress updates',(await p.locator('#progChip').innerText()).indexOf('1 of 8')!==-1);
+await p.goto(base+'/tracker.html');await p.waitForTimeout(400);
+await p.click('#addBtn');
+ok('tracker: add row works',await p.locator('#tbody tr').count()===4);
+await b.close();
+console.log(results.join('\n'));
+})().catch(function(e){console.error('E2E ERROR: '+e.message);process.exit(1);});
