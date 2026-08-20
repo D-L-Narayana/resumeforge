@@ -1,6 +1,6 @@
 .scan-wrap{max-width:860px;margin:0 auto}
 .drop{border:2px dashed rgba(255,255,255,.25);border-radius:22px;padding:48px 24px;text-align:center;background:var(--glass);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);cursor:pointer;transition:border-color var(--tr),background var(--tr),transform var(--tr);box-shadow:var(--glass-hi)}
-.drop:hover,.drop.over{border-color:#818cf8;background:rgba(129,140,248,.1);transform:translateY(-2px)}
+.drop:hover,.drop.over{border-color:#67e8f9;background:rgba(103,232,249,.07);transform:translateY(-2px)}
 .drop strong{display:block;font-size:var(--text-base);margin-bottom:6px}
 .drop span{color:var(--muted);font-size:var(--text-xs)}
 .drop .dicon{font-size:2rem;margin-bottom:10px;display:block}

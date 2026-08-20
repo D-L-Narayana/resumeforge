@@ -9,7 +9,7 @@ features:[
 {icon:'📱',title:'Works everywhere',desc:'A fully responsive builder that feels native on desktop, tablet, and mobile.'}
 ],
 templates:[
-{id:'modern',name:'Modern',accent:'#6366f1',desc:'Bold accent headers with a clean skills grid. Great for tech and product roles.'},
+{id:'modern',name:'Modern',accent:'#0ea5e9',desc:'Bold accent headers with a clean skills grid. Great for tech and product roles.'},
 {id:'classic',name:'Classic',accent:'#111827',desc:'Timeless serif look trusted in finance, law, and consulting.'},
 {id:'minimal',name:'Minimal',accent:'#94a3b8',desc:'Quiet, airy, typography-first. Perfect for design and research.'},
 {id:'executive',name:'Executive',accent:'#0f766e',desc:'Authoritative teal accents for senior and leadership roles.'},

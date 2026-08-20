@@ -1,8 +1,8 @@
 .toolrow{display:flex;justify-content:center;gap:14px;align-items:center;margin:6px 0 36px;flex-wrap:wrap}
 #roleSelect{width:auto;padding:10px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:.95rem}
-#roleSelect:focus{outline:none;border-color:var(--acc1)}
+#roleSelect:focus{outline:none;border-color:#67e8f9}
 #roleSelect option{background:#12121f;color:var(--text)}
-.prog-chip{padding:9px 16px;border-radius:999px;font-weight:700;font-size:.85rem;background:rgba(99,102,241,.14);color:#a5b4fc}
+.prog-chip{padding:9px 16px;border-radius:999px;font-weight:700;font-size:.85rem;background:rgba(103,232,249,.12);color:#7dd3fc;border:1px solid rgba(103,232,249,.3)}
 .q-card{cursor:pointer;transition:border-color .2s,background .2s}
 .q-card:hover{border-color:var(--acc1)}
 .q-card.ready{border-color:rgba(52,211,153,.5);background:rgba(52,211,153,.06)}
