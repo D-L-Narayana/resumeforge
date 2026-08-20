@@ -17,9 +17,9 @@ heroEl.addEventListener('mousemove',function(e){
 const r=mock.getBoundingClientRect();
 const dx=(e.clientX-(r.left+r.width/2))/r.width;
 const dy=(e.clientY-(r.top+r.height/2))/r.height;
-mock.style.transform='rotate(2deg) rotateY('+(dx*7).toFixed(2)+'deg) rotateX('+(-dy*7).toFixed(2)+'deg)';
+mock.style.transform='rotateY('+(dx*7).toFixed(2)+'deg) rotateX('+(-dy*7).toFixed(2)+'deg)';
 });
-heroEl.addEventListener('mouseleave',function(){mock.style.transform='rotate(2deg)';});
+heroEl.addEventListener('mouseleave',function(){mock.style.transform='none';});
 }
 $('year').textContent=new Date().getFullYear();
 });
