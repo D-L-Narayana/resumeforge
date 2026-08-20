@@ -19,7 +19,11 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.6;font-size:var(--text-base);min-height:100dvh}
+body{background-color:#fff;background-image:radial-gradient(rgba(29,29,31,.055) 1px,transparent 1px);background-size:26px 26px;color:var(--text);font-family:var(--font-body);line-height:1.6;font-size:var(--text-base);min-height:100dvh}
+body::before{content:'';position:fixed;inset:-15%;z-index:-1;pointer-events:none;background:radial-gradient(38% 34% at 14% 16%,rgba(0,144,247,.16),transparent 70%),radial-gradient(34% 30% at 86% 18%,rgba(0,199,190,.14),transparent 70%),radial-gradient(36% 32% at 76% 84%,rgba(255,159,10,.10),transparent 70%),radial-gradient(30% 28% at 22% 80%,rgba(255,55,95,.08),transparent 70%);filter:blur(70px);animation:blob1 48s ease-in-out infinite alternate}
+body::after{content:'';position:fixed;inset:-15%;z-index:-1;pointer-events:none;background:radial-gradient(26% 24% at 55% 45%,rgba(0,144,247,.07),transparent 70%);filter:blur(90px);animation:blob2 70s ease-in-out infinite alternate}
+@keyframes blob1{50%{transform:translate(3%,-2%) rotate(6deg) scale(1.06)}100%{transform:translate(-3%,2%) rotate(-5deg) scale(1.03)}}
+@keyframes blob2{100%{transform:translate(-4%,4%) scale(1.15)}}
 .container{max-width:1140px;margin:0 auto;padding:0 24px}
 h1{font-size:var(--text-3xl);line-height:1.05;letter-spacing:-.015em;font-weight:700}
 h2,h3{letter-spacing:-.01em}
