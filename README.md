@@ -12,6 +12,8 @@ A complete, privacy-first career toolkit — live resume builder, real-time ATS 
 ![Dependencies](https://img.shields.io/badge/runtime%20deps-zero-orange.svg)
 ![Privacy](https://img.shields.io/badge/data%20leaves%20browser-never-black.svg)
 
+### [▶ Live Demo — resumeforge-ruby-rho.vercel.app](https://resumeforge-ruby-rho.vercel.app)
+
 ![ResumeForge home](docs/home.png)
 
 </div>
@@ -20,6 +22,7 @@ A complete, privacy-first career toolkit — live resume builder, real-time ATS 
 
 ## Table of Contents
 
+- [Live Demo](https://resumeforge-ruby-rho.vercel.app)
 - [About](#about)
 - [Features](#features)
   - [Resume Builder](#resume-builder)
