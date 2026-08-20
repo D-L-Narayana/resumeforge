@@ -33,9 +33,6 @@ b.addEventListener('mouseleave',function(){gsap.to(b,{x:0,y:0,duration:.6,ease:'
 if(document.querySelector('.hero-copy')){
 gsap.from('.hero-copy > *',{opacity:0,y:26,duration:.8,ease:'power3.out',stagger:.09,clearProps:'all'});
 }
-if(document.querySelector('.mock-wrap')){
-gsap.from('.mock-wrap',{opacity:0,duration:1.1,ease:'power2.out',delay:.3});
-}
 if(document.querySelector('.page-head')){
 gsap.from('.page-head > .container > *',{opacity:0,y:20,duration:.7,ease:'power3.out',stagger:.08,clearProps:'all'});
 }
