@@ -43,8 +43,7 @@
 .ats-band .card{background:#1d1d1f;box-shadow:none}
 .meter-head{display:flex;justify-content:space-between;margin-bottom:10px;font-size:.95rem}
 .meter-bar{height:12px;background:#333336;border-radius:999px;overflow:hidden;margin-bottom:18px}
-.meter-fill{height:100%;width:92%;background:linear-gradient(90deg,#0090f7,#00c7be);border-radius:999px;animation:meterIn 1.4s var(--ease)}
-@keyframes meterIn{from{width:0}}
+.meter-fill{height:100%;width:92%;background:linear-gradient(90deg,#0090f7,#00c7be);border-radius:999px}
 .check-row{display:flex;justify-content:space-between;padding:11px 14px;background:#151516;border:1px solid #2d2d2f;border-radius:12px;margin:8px 0;font-size:.85rem;color:#d2d2d7}
 .ok{color:#30d158;font-weight:700}
 .warn{color:#ffd60a;font-weight:700}
@@ -79,3 +78,13 @@ footer .nav-links a{color:var(--muted);opacity:1}
 footer .nav-links a:hover{color:var(--text)}
 @media(max-width:1060px){.nav-links{display:none}}
 @media(max-width:900px){.ats-inner{grid-template-columns:1fr;gap:32px}.hero{padding:120px 0 70px}.hero-stats{gap:32px}}
+.marquee{overflow:hidden;padding:64px 0;background:#fff}
+.marquee-track{display:flex;width:max-content;animation:marq 30s linear infinite}
+.marquee-track span{font-size:clamp(3rem,7vw,6rem);font-weight:700;letter-spacing:-.03em;color:#e8e8ed;margin-right:64px;line-height:1}
+.marquee-track span.blue{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.marquee-rev .marquee-track{animation-direction:reverse;animation-duration:36s}
+@keyframes marq{to{transform:translateX(-50%)}}
+.card{position:relative}
+.tilt{transform-style:preserve-3d;will-change:transform;overflow:hidden}
+.glare{position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(420px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.6),transparent 46%);opacity:0;transition:opacity .25s}
+.wrd{display:inline-block}
