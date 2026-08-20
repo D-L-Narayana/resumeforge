@@ -11,9 +11,9 @@
 .hero-stats>div{background:var(--glass);border:1px solid var(--glass-brd);border-radius:16px;padding:12px 22px;backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);box-shadow:var(--glass-hi)}
 .hero-stats strong{font-size:var(--text-lg);display:block;letter-spacing:-.02em}
 .hero-stats span{color:var(--muted);font-size:var(--text-xs)}
-.mock-wrap{position:relative;max-width:370px;margin-left:auto;animation:floaty 7s ease-in-out infinite}
+.mock-wrap{position:relative;max-width:370px;margin-left:auto;animation:floaty 7s ease-in-out infinite;perspective:900px}
 @keyframes floaty{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(.5deg)}}
-.mock-paper{background:rgba(255,255,255,.93);color:#1a1a2e;border-radius:18px;padding:28px;box-shadow:0 40px 90px rgba(2,4,20,.6),inset 0 1px 0 rgba(255,255,255,.8);transform:rotate(2deg)}
+.mock-paper{background:rgba(255,255,255,.93);color:#1a1a2e;border-radius:18px;padding:28px;box-shadow:0 40px 90px rgba(2,4,20,.6),inset 0 1px 0 rgba(255,255,255,.8);transform:rotate(2deg);transition:transform .35s var(--ease);will-change:transform}
 .mname{font-weight:800;font-size:1.15rem}
 .mtitle{color:#6366f1;font-size:.72rem;font-weight:700;letter-spacing:.1em;margin-bottom:14px}
 .mline{height:8px;border-radius:4px;background:#e7e9f4;margin:9px 0}

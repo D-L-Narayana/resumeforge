@@ -10,6 +10,17 @@ $('faqList').innerHTML=D.faq.map(function(f){return `<div class="faq-item"><butt
 document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('click',function(){b.parentElement.classList.toggle('open');});});
 const obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+const mock=document.querySelector('.mock-paper');
+const heroEl=document.querySelector('.hero');
+if(mock&&heroEl&&window.matchMedia('(pointer:fine)').matches){
+heroEl.addEventListener('mousemove',function(e){
+const r=mock.getBoundingClientRect();
+const dx=(e.clientX-(r.left+r.width/2))/r.width;
+const dy=(e.clientY-(r.top+r.height/2))/r.height;
+mock.style.transform='rotate(2deg) rotateY('+(dx*7).toFixed(2)+'deg) rotateX('+(-dy*7).toFixed(2)+'deg)';
+});
+heroEl.addEventListener('mouseleave',function(){mock.style.transform='rotate(2deg)';});
+}
 $('year').textContent=new Date().getFullYear();
 });
 })();

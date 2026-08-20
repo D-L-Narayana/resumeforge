@@ -29,6 +29,12 @@ ok('interview: progress updates',(await p.locator('#progChip').innerText()).inde
 await p.goto(base+'/tracker.html');await p.waitForTimeout(400);
 await p.click('#addBtn');
 ok('tracker: add row works',await p.locator('#tbody tr').count()===4);
+await p.goto(base+'/scan.html');await p.waitForTimeout(500);
+await p.fill('#pasteBox','Alex Morgan\nalex@e.com +1 415 555 0134\nSummary\nDesigner.\nExperience\n- Led project increasing revenue 20%\n- Built systems for 5 teams\n- Shipped 3 products\n- Managed 4 people\n- Reduced costs 15%\nEducation\nBS Design\nSkills\nSQL, Figma');
+await p.click('#analyzeBtn');await p.waitForTimeout(500);
+ok('scan: report shows',await p.locator('#report.show').count()===1);
+ok('scan: score positive',parseInt(await p.locator('#scoreNum').innerText(),10)>50);
+ok('scan: 10 checks rendered',await p.locator('#repChecks .rep-check').count()===10);
 await b.close();
 console.log(results.join('\n'));
 })().catch(function(e){console.error('E2E ERROR: '+e.message);process.exit(1);});
