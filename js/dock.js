@@ -1,7 +1,7 @@
 (function(){
 document.addEventListener('DOMContentLoaded',function(){
 if(!document.getElementById('templateGrid'))return;
-function magnetize(bar,items,maxScale,radius){
+function magnetize(bar,items,maxScale,radius,spread){
 if(!window.matchMedia('(pointer:fine)').matches)return;
 let raf=null;
 const cur=items.map(function(){return 1;});
@@ -9,9 +9,12 @@ const tgt=items.map(function(){return 1;});
 function tick(){
 let live=false;
 items.forEach(function(it,i){
-cur[i]+=(tgt[i]-cur[i])*.22;
+cur[i]+=(tgt[i]-cur[i])*.2;
 if(Math.abs(tgt[i]-cur[i])>.002)live=true;
 it.style.transform='scale('+cur[i].toFixed(3)+')';
+const m=((cur[i]-1)*spread).toFixed(2)+'px';
+it.style.marginLeft=m;
+it.style.marginRight=m;
 });
 raf=live?requestAnimationFrame(tick):null;
 }
@@ -51,7 +54,7 @@ dock.appendChild(el);
 return el;
 });
 document.body.appendChild(dock);
-magnetize(dock,dItems,1.65,95);
+magnetize(dock,dItems,1.3,65,10);
 const foot=document.querySelector('footer');
 if(foot){
 const ICONS={
@@ -71,7 +74,7 @@ sd.appendChild(el);
 return el;
 });
 foot.insertBefore(sd,foot.firstChild);
-magnetize(sd,sItems,1.5,80);
+magnetize(sd,sItems,1.22,55,6);
 }
 });
 })();
