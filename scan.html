@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ATS Scanner — ResumeForge</title>
+<meta name="description" content="Upload or paste your resume and get an instant ATS score with 10 detailed checks and job-description keyword matching. 100% private, in your browser.">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/examples.css">
+<link rel="stylesheet" href="css/builder.css">
+<link rel="stylesheet" href="css/scan.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+<nav class="nav">
+<div class="container nav-inner">
+<a class="logo" href="index.html"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366f1"/><stop offset=".55" stop-color="#a855f7"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg1)"/><path d="M11 23V9h7.2a4.3 4.3 0 0 1 1.4 8.4L23 23h-3.6l-3-5H14v5z" fill="#fff"/></svg>Resume<span>Forge</span></a>
+<div class="nav-links">
+<a href="examples.html">Examples</a>
+<a href="interview.html">Interview prep</a>
+<a href="coverletter.html">Cover letters</a>
+<a href="tracker.html">Tracker</a>
+</div>
+<a class="btn btn-primary" href="builder.html">Open Builder</a>
+</div>
+</nav>
+<header class="page-head">
+<div class="container">
+<span class="badge">ATS Scanner</span>
+<h2 class="section-title">Scan your resume like a robot would</h2>
+<p class="section-sub">Drop your resume — PDF or text — and get an instant score across 10 recruiter checks, plus keyword coverage against any job description. Nothing leaves your browser.</p>
+</div>
+</header>
+<section class="section" style="padding-top:0">
+<div class="container scan-wrap">
+<div id="drop" class="drop">
+<span class="dicon">📄</span>
+<strong>Drop your resume here</strong>
+<span>PDF, TXT, or MD — or click to browse</span>
+<div id="dropNote"></div>
+</div>
+<input type="file" id="fileInput" accept=".pdf,.txt,.md,application/pdf,text/plain" style="display:none">
+<div class="or">— OR PASTE TEXT —</div>
+<div class="fgroup"><label>Resume text</label><textarea id="pasteBox" placeholder="Paste your full resume text here..."></textarea></div>
+<div class="fgroup"><label>Job description (optional, for keyword match)</label><textarea id="jdText" placeholder="Paste the job post to check keyword coverage..."></textarea></div>
+<div class="scan-actions"><button id="analyzeBtn" class="btn btn-primary btn-lg">Analyze my resume</button></div>
+<div id="report">
+<div class="report-grid">
+<div class="card ring-card">
+<div class="ring">
+<svg viewBox="0 0 120 120"><defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366f1"/><stop offset=".5" stop-color="#a855f7"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><circle class="track" cx="60" cy="60" r="52"/><circle id="ringFill" class="fill" cx="60" cy="60" r="52"/></svg>
+<b id="scoreNum">0</b>
+</div>
+<div class="ring-label">ATS score out of 100</div>
+<div id="statChips" class="stat-chips"></div>
+</div>
+<div class="card"><h3 style="margin-bottom:14px">Detailed checks</h3><div id="repChecks"></div></div>
+</div>
+<div id="jdMatch" class="card"></div>
+</div>
+</div>
+</section>
+<section class="cta-band">
+<div class="container">
+<h2>Fix what the scan found in <span class="grad">the builder</span></h2>
+<a class="btn btn-primary btn-lg" href="builder.html">Open the builder</a>
+</div>
+</section>
+<footer>
+<div class="container foot-inner">
+<div>© <span id="year"></span> ResumeForge. Crafted for job seekers.</div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="builder.html">Builder</a>
+<a href="examples.html">Examples</a>
+<a href="interview.html">Interview prep</a>
+</div>
+</div>
+</footer>
+<script src="vendor/pdf.min.js"></script>
+<script src="js/match.js"></script>
+<script src="js/parse.js"></script>
+<script src="js/scan.js"></script>
+</body>
+</html>

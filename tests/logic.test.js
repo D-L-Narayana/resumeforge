@@ -53,4 +53,12 @@ assert.strictEqual(goodB.checks.length,4,'bullet doctor runs 4 checks');
 D.sample.experience.forEach(function(e){e.bullets.forEach(function(b){
 assert.strictEqual(BL.analyze(b).score,100,'sample bullet should pass doctor: '+b);
 });});
+const P=require('../js/parse.js');
+const goodTxt=['Alex Morgan','alex.morgan@email.com  +1 (415) 555-0134','Summary','Product designer with impact.','Experience','- Led redesign increasing conversion 32%','- Built design system adopted by 6 teams','- Reduced onboarding time 40%','- Shipped mobile app rated 4.8 stars','- Managed research with 40 users','Education','B.Des, CCA, 2019','Skills','Figma, Prototyping, Research'].join('\n');
+const pr=P.analyzeText(goodTxt);
+assert(pr.total>=85,'parsed resume should score high, got '+pr.total);
+assert.strictEqual(pr.checks.length,10,'text scanner runs 10 checks');
+assert.strictEqual(pr.checks.reduce(function(s,c){return s+c.max;},0),100,'text weights sum to 100');
+assert(P.analyzeText('').total<=10,'empty text scores near zero');
+assert(pr.stats.bullets===5&&pr.stats.words>10,'stats computed');
 console.log('ALL TESTS PASSED');
