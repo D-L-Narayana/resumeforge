@@ -14,15 +14,16 @@
 .hero-stats strong{font-size:1.7rem;display:block;letter-spacing:-.01em}
 .hero-stats span{color:var(--muted);font-size:.85rem}
 .mock-wrap{position:relative;max-width:430px;margin:0 auto;animation:floaty 7s ease-in-out infinite;perspective:900px}
+.mock-wrap::before{content:'';position:absolute;inset:-50px -70px;background:radial-gradient(50% 50% at 50% 50%,rgba(0,113,227,.12),transparent 70%);z-index:-1}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.mock-paper{background:#fff;color:#1d1d1f;border:1px solid #e8e8ed;border-radius:24px;padding:32px;box-shadow:0 30px 70px rgba(0,0,0,.14);transition:transform .35s var(--ease);will-change:transform}
+.mock-paper{background:#fff;color:#1d1d1f;border:1px solid #d2d2d7;border-radius:24px;padding:32px;box-shadow:0 10px 24px rgba(0,0,0,.10),0 34px 80px rgba(0,0,0,.20);transition:transform .35s var(--ease);will-change:transform}
 .mname{font-weight:700;font-size:1.2rem}
 .mtitle{color:var(--blue);font-size:.72rem;font-weight:600;letter-spacing:.1em;margin-bottom:14px}
-.mline{height:8px;border-radius:4px;background:#e8e8ed;margin:9px 0}
+.mline{height:8px;border-radius:4px;background:#cfd6e0;margin:9px 0}
 .mline.w90{width:90%}.mline.w80{width:80%}.mline.w70{width:70%}.mline.w60{width:60%}.mline.w40{width:40%}
-.mhead{height:12px;width:34%;border-radius:4px;background:#d2d2d7;margin:18px 0 10px}
+.mhead{height:12px;width:34%;border-radius:4px;background:#a8b6c8;margin:18px 0 10px}
 .mchips{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
-.mchips i{display:block;height:16px;width:52px;border-radius:8px;background:#f5f5f7;border:1px solid #e8e8ed}
+.mchips i{display:block;height:16px;width:52px;border-radius:8px;background:#eef2f7;border:1px solid #cfd6e0}
 .mock-score{position:absolute;top:-16px;right:-10px;background:var(--blue);color:#fff;padding:10px 18px;border-radius:999px;font-weight:700;box-shadow:0 10px 26px rgba(0,113,227,.35);z-index:2;animation:scorePulse 3.5s ease-in-out infinite}
 @keyframes scorePulse{0%,100%{box-shadow:0 10px 26px rgba(0,113,227,.3)}50%{box-shadow:0 12px 36px rgba(0,113,227,.5)}}
 #features{background:var(--alt)}
