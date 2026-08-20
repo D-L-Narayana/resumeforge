@@ -11,6 +11,8 @@ Premium resume builder with a real-time ATS score engine. Pure HTML/CSS/JS — z
 - Interview prep studio: 48 curated questions across 6 role tracks
 - Bullet doctor: per-bullet feedback on verbs, numbers, weak phrases, length
 - Application tracker with pipeline stats and JSON export/import
+- ATS Scanner: upload a PDF/TXT resume (or paste text) for a 10-check score + JD keyword match
+- Glassmorphism design system: animated aurora background, frosted glass surfaces, living micro-interactions
 - One-click PDF export via print-optimized styling
 - Monetization-ready landing page: Free / Pro $9mo / Lifetime $49 tiers
 
