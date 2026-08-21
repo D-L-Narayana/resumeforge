@@ -59,3 +59,9 @@ textarea{min-height:88px;resize:vertical}
 .doc-b{font-size:.8rem;color:var(--text);margin-bottom:6px;font-style:italic}
 @media print{body *{visibility:hidden}.paper,.paper *{visibility:visible}.paper{position:absolute;left:0;top:0;width:100%;box-shadow:none;border:none;border-radius:0;padding:24px 8px;background:#fff}}
 @media(max-width:900px){.builder-main{grid-template-columns:1fr}.panel{height:auto;border-right:none;border-bottom:1px solid #e8e8ed}.stage{height:auto;padding:20px}}
+.t-onyx{--pacc:#111}
+.t-onyx .p-sec h2{background:#111;color:#fff;padding:3px 10px;border-bottom:none;border-radius:6px}
+.t-ivory{--pacc:#8a6d3b;background:#fffdf5}
+.t-ivory,.t-ivory h1,.t-ivory h2{font-family:Georgia,'Times New Roman',serif}
+.t-aurora{--pacc:#0d9488}
+.t-aurora .p-sec h2{border-bottom:2px solid #0d9488;border-image:linear-gradient(90deg,#0d9488,#0090f7) 1}

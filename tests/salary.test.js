@@ -1,0 +1,22 @@
+const S=require('../js/salarylib.js');
+let pass=0,fail=0;
+function ok(n,c){if(c){pass++;console.log('PASS '+n);}else{fail++;console.log('FAIL '+n);}}
+const r=S.analyzeOffer(100000,110000,120000);
+ok('raise pct 10',r.raisePct===10);
+ok('vs market -8.3',r.vsMarketPct===-8.3);
+ok('verdict below',r.verdict==='below');
+ok('counter low 129500',r.counterLow===129500);
+ok('counter high 141500',r.counterHigh===141500);
+ok('strong verdict',S.analyzeOffer(90000,120000,110000).verdict==='strong');
+ok('fair verdict no market',S.analyzeOffer(100000,108000,0).verdict==='fair');
+ok('null market pct',S.analyzeOffer(100000,108000,0).vsMarketPct===null);
+const sc=S.buildScript('counter',{company:'Acme',role:'Designer',manager:'Sarah',offer:110000,counter:129500,strength:'my design wins'});
+ok('counter script has company',sc.indexOf('Acme')>-1);
+ok('counter script has amount',sc.indexOf('$129,500')>-1);
+ok('counter script has manager',sc.indexOf('Hi Sarah')>-1);
+ok('competing script has amount',S.buildScript('competing',{competing:130000}).indexOf('$130,000')>-1);
+ok('benefits script mentions PTO',S.buildScript('benefits',{}).indexOf('PTO')>-1);
+ok('time script asks for days',S.buildScript('time',{}).indexOf('few extra days')>-1);
+ok('fmt',S.fmt(129500)==='$129,500');
+console.log(fail===0?'ALL SALARY TESTS PASSED ('+pass+')':'FAILURES: '+fail);
+if(fail>0)process.exit(1);

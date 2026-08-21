@@ -2,7 +2,7 @@
 const DATA={
 features:[
 {icon:'⚡',title:'Real-time ATS scoring',desc:'Every keystroke is re-scored against 8 recruiter checks, so you fix issues before you apply — not after the rejection.'},
-{icon:'🎯',title:'Recruiter-approved templates',desc:'Four layouts modeled on what hiring managers at top companies actually shortlist. No gimmicks, just clarity.'},
+{icon:'🎯',title:'Recruiter-approved templates',desc:'Nine layouts modeled on what hiring managers at top companies actually shortlist. No gimmicks, just clarity.'},
 {icon:'📄',title:'One-click PDF export',desc:'Pixel-perfect print styling turns your resume into a clean, ready-to-send PDF straight from the browser.'},
 {icon:'🧠',title:'Smart content hints',desc:'Failing checks come with concrete fixes: quantify results, add action verbs, tighten your summary.'},
 {icon:'🔒',title:'Private by design',desc:'Everything runs in your browser. Your career data never touches a server, ever.'},
@@ -14,11 +14,14 @@ templates:[
 {id:'minimal',name:'Minimal',accent:'#94a3b8',desc:'Quiet, airy, typography-first. Perfect for design and research.'},
 {id:'executive',name:'Executive',accent:'#0f766e',desc:'Authoritative teal accents for senior and leadership roles.'},
 {id:'compact',name:'Compact',accent:'#b45309',desc:'Dense single-page layout that fits 10+ years of experience without clutter.'},
-{id:'slate',name:'Slate',accent:'#334155',desc:'Understated slate tones with strong hierarchy. Built for engineering roles.'}
+{id:'slate',name:'Slate',accent:'#334155',desc:'Understated slate tones with strong hierarchy. Built for engineering roles.'},
+{id:'onyx',name:'Onyx',accent:'#111111',desc:'High-contrast black section headers that command attention. For bold personal brands.'},
+{id:'ivory',name:'Ivory',accent:'#8a6d3b',desc:'Warm serif elegance on soft ivory paper. A natural fit for academia and publishing.'},
+{id:'aurora',name:'Aurora',accent:'#0d9488',desc:'Gradient accent lines with generous spacing. Made for creative and marketing roles.'}
 ],
 pricing:[
 {name:'Free',price:'$0',per:'',popular:false,cta:'Start free',features:['1 pro template','Full ATS score engine','PDF export','No signup required']},
-{name:'Pro',price:'$9',per:'/mo',popular:true,cta:'Go Pro',features:['All 6 templates','Unlimited resumes','Cover letter studio','Bullet doctor hints','Priority support']},
+{name:'Pro',price:'$9',per:'/mo',popular:true,cta:'Go Pro',features:['All 9 templates','Unlimited resumes','Cover letter studio','Bullet doctor hints','Priority support']},
 {name:'Lifetime',price:'$49',per:' once',popular:false,cta:'Buy once',features:['Everything in Pro','Lifetime updates','Early access to new templates','Commercial use']}
 ],
 testimonials:[
