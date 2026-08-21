@@ -6,7 +6,7 @@ const base='http://localhost:8043';
 const results=[];
 function ok(name,cond){results.push((cond?'PASS':'FAIL')+' '+name);if(!cond)process.exitCode=1;}
 await p.goto(base+'/index.html');await p.waitForTimeout(500);
-ok('landing: 6 template cards',await p.locator('#templateGrid .template').count()===6);
+ok('landing: 9 template cards',await p.locator('#templateGrid .template').count()===9);
 ok('landing: 3 pricing cards',await p.locator('#pricingGrid .price-card').count()===3);
 ok('landing: 5 faq items',await p.locator('#faqList .faq-item').count()===5);
 await p.goto(base+'/builder.html');await p.waitForTimeout(400);
