@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300">
+<defs>
+<radialGradient id="b1" cx="15%" cy="20%" r="45%"><stop offset="0%" stop-color="#0090f7" stop-opacity=".18"/><stop offset="100%" stop-color="#0090f7" stop-opacity="0"/></radialGradient>
+<radialGradient id="b2" cx="85%" cy="25%" r="45%"><stop offset="0%" stop-color="#00c7be" stop-opacity=".16"/><stop offset="100%" stop-color="#00c7be" stop-opacity="0"/></radialGradient>
+<radialGradient id="b3" cx="70%" cy="90%" r="40%"><stop offset="0%" stop-color="#ff9f0a" stop-opacity=".12"/><stop offset="100%" stop-color="#ff375f" stop-opacity="0"/></radialGradient>
+<linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0071e3"/><stop offset="1" stop-color="#00c7be"/></linearGradient>
+</defs>
+<rect width="1280" height="300" fill="#ffffff"/>
+<rect width="1280" height="300" fill="url(#b1)"/>
+<rect width="1280" height="300" fill="url(#b2)"/>
+<rect width="1280" height="300" fill="url(#b3)"/>
+<g transform="translate(408,70)">
+<rect width="72" height="72" rx="18" fill="url(#lg)"/>
+<path transform="translate(4,4) scale(2)" d="M11 23V9h7.2a4.3 4.3 0 0 1 1.4 8.4L23 23h-3.6l-3-5H14v5z" fill="#fff"/>
+<text x="92" y="52" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="48" font-weight="700" fill="#1d1d1f">Resume<tspan fill="#0071e3">Forge</tspan></text>
+</g>
+<text x="640" y="200" text-anchor="middle" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#6e6e73">Build a resume that gets interviews — ATS scoring, cover letters, interview prep, and more. 100% in your browser.</text>
+<g font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600">
+<rect x="399" y="226" width="110" height="30" rx="15" fill="#f5f5f7" stroke="#e8e8ed"/><text x="454" y="246" text-anchor="middle" fill="#1d1d1f">6 Templates</text>
+<rect x="519" y="226" width="176" height="30" rx="15" fill="#f5f5f7" stroke="#e8e8ed"/><text x="607" y="246" text-anchor="middle" fill="#1d1d1f">10-Check ATS Scanner</text>
+<rect x="705" y="226" width="116" height="30" rx="15" fill="#f5f5f7" stroke="#e8e8ed"/><text x="763" y="246" text-anchor="middle" fill="#1d1d1f">Zero Uploads</text>
+<rect x="831" y="226" width="60" height="30" rx="15" fill="#eaf3fd" stroke="#cfe6fb"/><text x="861" y="246" text-anchor="middle" fill="#0071e3">MIT</text>
+</g>
+</svg>
