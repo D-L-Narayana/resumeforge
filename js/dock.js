@@ -39,6 +39,7 @@ const APPS=[
 ['\ud83c\udfa4','Interview prep','interview.html','linear-gradient(145deg,#ff7ab8,#e0447f)'],
 ['\ud83d\udccb','Tracker','tracker.html','linear-gradient(145deg,#2fd8c9,#0e8f86)'],
 ['\u2709\ufe0f','Cover letters','coverletter.html','linear-gradient(145deg,#5ac8fa,#0071e3)'],
+['\ud83d\udcb0','Salary','salary.html','linear-gradient(145deg,#ffb340,#c25e00)'],
 ['\u2b50','Pricing','#pricing','linear-gradient(145deg,#48484c,#242427)']
 ];
 const dock=document.createElement('nav');
