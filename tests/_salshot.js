@@ -1,0 +1,21 @@
+const {chromium}=require('playwright');
+(async function(){
+const b=await chromium.launch();
+const p=await b.newPage({viewport:{width:1440,height:900}});
+await p.goto('http://localhost:8043/salary.html',{waitUntil:'domcontentloaded'});
+await p.waitForTimeout(1800);
+await p.fill('#curSal','100000');
+await p.fill('#offSal','115000');
+await p.fill('#mktSal','125000');
+await p.click('#analyzeBtn');
+await p.fill('#scCompany','Acme Corp');
+await p.fill('#scManager','Sarah');
+await p.click('#genBtn');
+await p.waitForTimeout(900);
+await p.screenshot({path:'/tmp/salary.png'});
+const counter=await p.locator('#scCounter').inputValue();
+const script=await p.locator('#scriptOut').textContent();
+console.log('COUNTER '+counter);
+console.log('SCRIPT_OK '+(script.indexOf('Acme Corp')>-1&&script.indexOf('Hi Sarah')>-1));
+await b.close();
+})().catch(function(e){console.error('ERR '+e.message);process.exit(1);});
