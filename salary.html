@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salary Negotiation — ResumeForge</title>
+<meta name="description" content="Track every job application through your pipeline — private, in-browser, with JSON export and import.">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/examples.css">
+<link rel="stylesheet" href="css/salary.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+<nav class="nav">
+<div class="container nav-inner">
+<a class="logo" href="index.html"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0071e3"/><stop offset=".55" stop-color="#00a2ff"/><stop offset="1" stop-color="#00c7be"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="#0071e3"/><path d="M11 23V9h7.2a4.3 4.3 0 0 1 1.4 8.4L23 23h-3.6l-3-5H14v5z" fill="#fff"/></svg>Resume<span>Forge</span></a>
+<div class="nav-links">
+<a href="examples.html">Examples</a>
+<a href="interview.html">Interview prep</a>
+<a href="coverletter.html">Cover letters</a><a href="salary.html">Salary</a>
+<a href="scan.html">ATS Scanner</a>
+</div>
+<a class="btn btn-primary" href="builder.html">Open Builder</a>
+</div>
+</nav>
+<main class="swrap">
+<header class="page-head">
+<h1>Salary Negotiation</h1>
+<p class="lead">Know your number, anchor high, and ask with confidence. Analyze your offer, get a counter range, and send a script that works.</p>
+</header>
+<section class="sal-grid">
+<div class="card sal-card">
+<h3>Offer analyzer</h3>
+<label for="curSal">Current salary (annual)</label><input id="curSal" type="number" placeholder="100000">
+<label for="offSal">Offered salary</label><input id="offSal" type="number" placeholder="115000">
+<label for="mktSal">Market rate for the role</label><input id="mktSal" type="number" placeholder="125000">
+<button class="btn btn-primary" id="analyzeBtn" type="button">Analyze offer</button>
+<div id="anaOut" class="ana-out"><p class="hint">Fill in the numbers and hit analyze &mdash; you get a verdict, the raise math, and the exact range to counter with.</p></div>
+</div>
+<div class="card sal-card">
+<h3>Script generator</h3>
+<label for="scType">Scenario</label>
+<select id="scType"><option value="counter">Counter the offer</option><option value="competing">I have a competing offer</option><option value="benefits">Negotiate beyond base salary</option><option value="time">Ask for more time</option></select>
+<div class="two-col"><div><label for="scCompany">Company</label><input id="scCompany" type="text" placeholder="Acme Corp"></div><div><label for="scRole">Role</label><input id="scRole" type="text" placeholder="Senior Product Designer"></div></div>
+<div class="two-col"><div><label for="scManager">Hiring manager</label><input id="scManager" type="text" placeholder="Sarah"></div><div><label for="scOffer">Offered amount</label><input id="scOffer" type="number" placeholder="115000"></div></div>
+<div class="two-col"><div><label for="scCounter">Your counter</label><input id="scCounter" type="number" placeholder="130000"></div><div id="compWrap" class="hide"><label for="scCompeting">Competing offer</label><input id="scCompeting" type="number" placeholder="130000"></div></div>
+<label for="scStrength">Your strongest card (one line)</label><input id="scStrength" type="text" placeholder="I led a redesign that lifted conversion 23%">
+<div class="btn-row"><button class="btn btn-primary" id="genBtn" type="button">Generate script</button><button class="btn btn-ghost" id="copyBtn" type="button">Copy</button></div>
+<pre id="scriptOut" class="script-out">Your script will appear here.</pre>
+</div>
+</section>
+<section class="card rules-card">
+<h3>The 8 rules of salary negotiation</h3>
+<ol class="rules">
+<li><strong>Never give the first number.</strong> Let them anchor &mdash; then counter above it.</li>
+<li><strong>Anchor 8&ndash;18% above the offer.</strong> You land in the middle; make the middle your target.</li>
+<li><strong>Negotiate the package, not just base.</strong> Signing bonus, equity, PTO, remote days, and review timing are all levers.</li>
+<li><strong>Use precise numbers.</strong> Asking for $127,500 signals research; $130,000 sounds like a guess.</li>
+<li><strong>Silence is leverage.</strong> Make your ask, then stop talking.</li>
+<li><strong>Get competing offers.</strong> Nothing moves a number faster than an alternative.</li>
+<li><strong>Stay warm and collaborative.</strong> You are solving a problem together, not fighting.</li>
+<li><strong>Get the final offer in writing</strong> before you resign anywhere.</li>
+</ol>
+</section>
+</main>
+
+<script src="js/salarylib.js"></script><script src="js/salary.js"></script>
+<script src="vendor/gsap.min.js"></script><script src="js/fx.js"></script><script src="js/theme.js"></script></body>
+</html>
