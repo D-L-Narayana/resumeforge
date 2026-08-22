@@ -6,7 +6,7 @@ if(!hero)return;
 var hc=document.querySelector('.hero-copy')||hero;
 var h1=hero.querySelector('h1');
 Array.prototype.slice.call(hero.querySelectorAll('*')).forEach(function(el){
-if(/UPLOAD & SCAN/.test(el.textContent)&&(!h1||!el.contains(h1))&&!el.closest('.ann-pill'))el.style.display='none';
+if(/upload & scan/i.test(el.textContent)&&(!h1||!el.contains(h1))&&!el.closest('.ann-pill'))el.style.display='none';
 });
 var accents=['#0071e3','#0d9488','#b45309','#111827','#8a6d3b'];
 var pill=document.createElement('a');
