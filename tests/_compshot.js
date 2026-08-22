@@ -1,0 +1,20 @@
+const {chromium}=require('playwright');
+(async function(){
+const b=await chromium.launch();
+const p=await b.newPage({viewport:{width:1440,height:900}});
+await p.goto('http://localhost:8043/index.html',{waitUntil:'domcontentloaded'});
+await p.waitForTimeout(2200);
+const counts={pill:await p.locator('.ann-pill').count(),cue:await p.locator('.scroll-cue').count(),proc:await p.locator('.proc-pill').count(),logos:await p.locator('.slogo svg').count()};
+console.log('COUNTS '+JSON.stringify(counts));
+await p.hover('.ann-pill');
+await p.waitForTimeout(750);
+await p.screenshot({path:'/tmp/comp1.png'});
+await p.evaluate(function(){document.querySelector('.stack-strip').scrollIntoView({block:'center'});});
+await p.waitForTimeout(1500);
+await p.screenshot({path:'/tmp/comp2.png'});
+await p.evaluate(function(){document.querySelector('.proc-row').scrollIntoView({block:'center'});});
+await p.waitForTimeout(1800);
+await p.screenshot({path:'/tmp/comp3.png'});
+await b.close();
+console.log('SHOTS DONE');
+})().catch(function(e){console.error('ERR '+e.message);process.exit(1);});
