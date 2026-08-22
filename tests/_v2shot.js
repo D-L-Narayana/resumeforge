@@ -1,0 +1,21 @@
+const {chromium}=require('playwright');
+(async function(){
+const b=await chromium.launch();
+const p=await b.newPage({viewport:{width:1440,height:900}});
+await p.goto('http://localhost:8043/index.html',{waitUntil:'domcontentloaded'});
+await p.waitForTimeout(3600);
+const r={rotor:await p.locator('.rotor-word').count(),pgbar:await p.locator('#pgbar').count(),glows:await p.locator('.spot-glow').count(),toast:await p.locator('.toast.on').count()};
+await p.screenshot({path:'/tmp/v2a.png'});
+await p.evaluate(function(){document.querySelector('#features').scrollIntoView({block:'center'});});
+await p.waitForTimeout(900);
+await p.hover('#featureGrid .card >> nth=1');
+await p.waitForTimeout(600);
+await p.screenshot({path:'/tmp/v2b.png'});
+const p2=await b.newPage({viewport:{width:1440,height:900}});
+await p2.goto('http://localhost:8043/builder.html',{waitUntil:'domcontentloaded'});
+await p2.waitForTimeout(1800);
+r.builderPg=await p2.locator('#pgbar').count();
+r.builderGlows=await p2.locator('.spot-glow').count();
+console.log('V2 '+JSON.stringify(r));
+await b.close();
+})().catch(function(e){console.error('ERR '+e.message);process.exit(1);});
