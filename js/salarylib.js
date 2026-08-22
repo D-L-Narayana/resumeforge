@@ -14,7 +14,7 @@ return{raisePct:raisePct,vsMarketPct:vsMarketPct,counterLow:money(anchor*1.08),c
 function buildScript(kind,f){
 f=f||{};
 const c=f.company||'the company';
-const r=f.role||'the role';
+const r=f.role||'role';
 const m=f.manager||'there';
 const offer=f.offer?fmt(f.offer):'the current offer';
 const counter=f.counter?fmt(f.counter):'a stronger number';
