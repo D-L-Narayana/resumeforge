@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded',function(){
 var hero=document.querySelector('.hero');
 if(!hero)return;
 var hc=document.querySelector('.hero-copy')||hero;
-var h1=hc.querySelector('h1');
-Array.prototype.slice.call(hc.querySelectorAll('*')).forEach(function(el){
+var h1=hero.querySelector('h1');
+Array.prototype.slice.call(hero.querySelectorAll('*')).forEach(function(el){
 if(/UPLOAD & SCAN/.test(el.textContent)&&(!h1||!el.contains(h1))&&!el.closest('.ann-pill'))el.style.display='none';
 });
 var accents=['#0071e3','#0d9488','#b45309','#111827','#8a6d3b'];
