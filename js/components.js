@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded',function(){
 var hero=document.querySelector('.hero');
 if(!hero)return;
 var hc=document.querySelector('.hero-copy')||hero;
-var old=Array.prototype.slice.call(hc.querySelectorAll('*')).filter(function(el){return el.children.length===0&&/UPLOAD & SCAN/.test(el.textContent);})[0];
-if(old)old.style.display='none';
+var h1=hc.querySelector('h1');
+Array.prototype.slice.call(hc.querySelectorAll('*')).forEach(function(el){
+if(/UPLOAD & SCAN/.test(el.textContent)&&(!h1||!el.contains(h1))&&!el.closest('.ann-pill'))el.style.display='none';
+});
 var accents=['#0071e3','#0d9488','#b45309','#111827','#8a6d3b'];
 var pill=document.createElement('a');
 pill.className='ann-pill';
