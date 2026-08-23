@@ -72,7 +72,8 @@
 .faq-item.open .faq-a{max-height:240px;padding-bottom:20px}
 .cta-band{text-align:center;padding:clamp(90px,10vw,140px) 0;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(0,144,247,.10))}
 .cta-band h2{font-size:clamp(1.9rem,1rem + 2.8vw,2.9rem);letter-spacing:-.015em;margin-bottom:28px;font-weight:700}
-footer{background:rgba(245,245,247,.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid #d2d2d7;padding:32px 0;color:var(--muted);font-size:.8rem}
+footer{background:rgba(245,245,247,.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid #d2d2d7;padding:32px 0 150px;color:var(--muted);font-size:.8rem}
+@media(max-width:900px){footer{padding-bottom:60px}}
 .foot-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center}
 footer .nav-links a{color:var(--muted);opacity:1}
 footer .nav-links a:hover{color:var(--text)}

@@ -1,20 +1,25 @@
 (function(){
+function getT(){try{var m=document.cookie.match(/(?:^|; )rftheme=(dark|warm)/);return m?m[1]:null;}catch(e){return null;}}
+function apply(v){if(v==='dark'||v==='warm')document.documentElement.setAttribute('data-theme',v);else document.documentElement.removeAttribute('data-theme');}
+var cur=getT();
+apply(cur);
 document.addEventListener('DOMContentLoaded',function(){
-const pill=document.createElement('div');
+var pill=document.createElement('div');
 pill.className='theme-pill';
 pill.setAttribute('aria-label','Theme');
-const opts=[['light','\u2600','Light mode'],['dark','\u263E','Dark mode'],['warm','\u2668','Warm mode']];
+var opts=[['light','\u2600','Light mode'],['dark','\u263E','Dark mode'],['warm','\u2668','Warm mode']];
 opts.forEach(function(o){
-const b=document.createElement('button');
+var b=document.createElement('button');
 b.type='button';
 b.title=o[2];
 b.textContent=o[1];
-if(o[0]==='light')b.classList.add('on');
+if((cur||'light')===o[0])b.classList.add('on');
 b.addEventListener('click',function(){
 pill.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
 b.classList.add('on');
-if(o[0]==='light')document.documentElement.removeAttribute('data-theme');
-else document.documentElement.setAttribute('data-theme',o[0]);
+cur=o[0]==='light'?null:o[0];
+apply(cur);
+try{document.cookie='rftheme='+o[0]+';path=/;max-age=31536000';}catch(e){}
 });
 pill.appendChild(b);
 });

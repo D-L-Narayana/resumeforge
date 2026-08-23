@@ -126,3 +126,8 @@ html[data-theme=warm] .rep-check{background:#fffaf0;border-color:#e3d5bd}
 html[data-theme=warm] .stat-chips span{background:#fffaf0;border-color:#e3d5bd}
 html[data-theme=warm] .doc-item{background:#fffaf0;border-color:#e3d5bd}
 html[data-theme=warm] .theme-pill{background:rgba(248,242,231,.85)}
+html[data-theme=dark] .price-card.popular{background:#000}
+html[data-theme=dark] .price-card.popular .plist li{color:#a1a1a6}
+html[data-theme=warm] .price-card.popular{background:#241a0e;box-shadow:0 12px 40px rgba(97,66,22,.35)}
+html[data-theme=warm] .price-card.popular h3,html[data-theme=warm] .price-card.popular .price{color:#fff}
+html[data-theme=warm] .price-card.popular .plist li{color:#cbbfa4}
