@@ -117,5 +117,63 @@ gsap.from('.flip-big span',{rotationX:-95,opacity:0,y:10,transformPerspective:70
 gsap.from('.slogo',{y:26,opacity:0,scale:.85,stagger:.07,duration:.6,ease:'back.out(2)',scrollTrigger:{trigger:'.stack-logos',start:'top 85%',once:true},clearProps:'transform'});
 }
 }
+var feats=document.querySelector('#features');
+if(feats){
+var cs=document.createElement('section');
+cs.className='section compare-sec';
+var mklines=function(n,cls){var s='';for(var i=0;i<n;i++)s+='<i class="'+cls+'" style="width:'+(55+((i*17)%40))+'%"></i>';return s;};
+cs.innerHTML='<h2 class="section-title">From ignored to interviewed</h2><p class="section-sub">Drag the handle to compare a typical resume with a forged one.</p>'+
+'<div class="compare" id="compare">'+
+'<div class="cmp-side cmp-before"><span class="cmp-tag tl">BEFORE</span><div class="cmp-paper"><b class="cmp-name dim">ALEX MORGAN</b>'+mklines(11,'bl')+'<span class="cmp-chip bad">ATS 34/100</span></div></div>'+
+'<div class="cmp-side cmp-after"><span class="cmp-tag tr">AFTER</span><div class="cmp-paper"><b class="cmp-name">ALEX MORGAN</b><i class="ah"></i>'+mklines(3,'al')+'<i class="ah"></i>'+mklines(4,'al')+'<i class="ah"></i>'+mklines(2,'al')+'<span class="cmp-chip good">ATS 92/100</span></div></div>'+
+'<div class="cmp-handle"><span>\u2194</span></div></div>';
+feats.insertAdjacentElement('afterend',cs);
+var cmp=cs.querySelector('.compare'),aft=cs.querySelector('.cmp-after'),hnd=cs.querySelector('.cmp-handle');
+var setP=function(p){p=Math.max(6,Math.min(94,p));aft.style.clipPath='inset(0 0 0 '+p+'%)';hnd.style.left=p+'%';};
+setP(50);
+var drag=false;
+cmp.addEventListener('pointerdown',function(e){drag=true;cmp.setPointerCapture(e.pointerId);var r=cmp.getBoundingClientRect();setP((e.clientX-r.left)/r.width*100);});
+cmp.addEventListener('pointermove',function(e){if(!drag)return;var r=cmp.getBoundingClientRect();setP((e.clientX-r.left)/r.width*100);});
+cmp.addEventListener('pointerup',function(){drag=false;});
+cmp.addEventListener('pointercancel',function(){drag=false;});
+if(window.gsap&&window.ScrollTrigger&&!RM){
+var co={p:50};
+gsap.to(co,{p:66,duration:.8,yoyo:true,repeat:1,ease:'power2.inOut',onUpdate:function(){setP(co.p);},scrollTrigger:{trigger:cmp,start:'top 70%',once:true}});
+}
+}
+var faqEl=document.querySelector('#faqList');
+var wallHost=faqEl?faqEl.closest('section'):null;
+if(wallHost){
+var quotes=[["Priya S.","Data Analyst","The ATS checklist caught three things my paid reviewer missed."],["Alex M.","Frontend Engineer","Rebuilt my resume in 20 minutes. Two callbacks the same week."],["Jordan L.","Product Manager","The JD matcher told me exactly which keywords I was missing."],["Sara K.","UX Designer","Cover letter studio nailed my tone on the first try."],["Ken W.","Sales Lead","Used the salary script word for word. +$14.5k."],["Mia R.","Marketing Manager","Aurora template got compliments in the final round."],["Dev P.","Backend Engineer","Tracker kept my 30 applications from becoming chaos."],["Ana T.","Recruiter","I recommend the scanner to every candidate I reject."],["Leo F.","Data Scientist","Bullet doctor turned my duties into achievements."],["Nina G.","PM Intern","Interview prep questions showed up in my actual interview."],["Omar H.","DevOps","From 34 to 92 ATS in one evening."],["Tara V.","Copywriter","It feels like Apple built a resume tool."]];
+var wsec=document.createElement('section');
+wsec.className='section wall-sec';
+var wcols=[[],[],[]];
+quotes.forEach(function(q,i){wcols[i%3].push(q);});
+wsec.innerHTML='<h2 class="section-title">Wall of wins</h2><p class="section-sub">Real workflows, real callbacks.</p><div class="wall">'+wcols.map(function(col){var cards=col.concat(col).map(function(q){return '<div class="wall-card">\u201C'+q[2]+'\u201D<strong>'+q[0]+'</strong><em>'+q[1]+'</em></div>';}).join('');return '<div class="wall-col">'+cards+'</div>';}).join('')+'</div>';
+wallHost.insertAdjacentElement('beforebegin',wsec);
+}
+var mw=hero?hero.querySelector('.mock-wrap'):null;
+if(mw&&!RM){
+[['PDF ready \u2713',''],['JD match 87%','r2']].forEach(function(c){
+var ring=document.createElement('span');
+ring.className='orbit-ring '+c[1];
+ring.innerHTML='<span class="orbit-chip">'+c[0]+'</span>';
+mw.appendChild(ring);
+});
+}
+if(!hero&&!RM){
+var sh=document.querySelector('.page-head h1, main h1, .swrap h1');
+if(sh&&sh.children.length===0){
+var fin=sh.textContent,schars='!<>-_/[]{}=+*^?#';
+var fr=0,total=26;
+var siv=setInterval(function(){
+fr++;
+var reveal=Math.floor(fin.length*fr/total),out='';
+for(var i=0;i<fin.length;i++){out+=i<reveal?fin[i]:(fin[i]===' '?' ':schars[Math.floor(Math.random()*schars.length)]);}
+sh.textContent=out;
+if(fr>=total){sh.textContent=fin;clearInterval(siv);}
+},40);
+}
+}
 });
 })();
